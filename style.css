@@ -23,6 +23,7 @@ header {
     border: 3px solid hsl(217, 16%, 45%);
     border-radius: 20px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding: 25px;
     margin-top: 48px;
@@ -34,6 +35,11 @@ h1 {
     line-height: 0.8;
     display: flex;
     flex-direction: column;
+    text-transform: uppercase;
+}
+
+h2 {
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
@@ -68,7 +74,7 @@ h4 {
     text-transform: uppercase;
     letter-spacing: 2px;
     position: fixed;
-    bottom: -30px;
+    bottom: 30px;
     right: 30px;
 }
 
@@ -100,9 +106,18 @@ main::before {
     border: none;
     border-radius: 50%;
     box-shadow: inset 0 -5px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
     margin: 0 25px;
     height: 150px;
     width: 150px;
+}
+
+.btn-circle:focus {
+    outline: none;
+}
+
+.btn-circle:active {
+    transform: scale(0.9);
 }
 
 .btn-circle .wrapper {
@@ -138,4 +153,46 @@ main::before {
         hsl(349, 71%, 52%),
         hsl(349, 70%, 56%)
     );
+}
+
+.btn {
+    border: none;
+    background-color: #fff;
+    color: hsl(229, 25%, 31%);
+    font-size: 20px;
+    font-family: inherit;
+    padding: 10px 35px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 8px;
+}
+
+.selection {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    width: 900px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.selection h2 {
+    margin-bottom: 25px;
+}
+
+.selection .btn-circle {
+    margin: 50px;
+    transform: scale(1.4);
+}
+
+.between-circles {
+    margin-top: 80px;
+}
+
+.big-text {
+    font-size: 3rem;
+    margin: 0 0 20px;
+    line-height: 0.8;
+    text-transform: uppercase;
 }

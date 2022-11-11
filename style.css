@@ -89,6 +89,7 @@ main {
     position: relative;
 }
 
+
 main::before {
     background-image: url('./images/bg-triangle.svg');
     background-repeat: no-repeat;
@@ -112,7 +113,12 @@ main::before {
     width: 150px;
 }
 
-.btn-circle:focus {
+button {
+    cursor: pointer;
+}
+
+.btn-circle:focus,
+button {
     outline: none;
 }
 
@@ -195,4 +201,44 @@ main::before {
     margin: 0 0 20px;
     line-height: 0.8;
     text-transform: uppercase;
+}
+
+.rules-modal {
+    display: none;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    width: 400px;
+    height: 350px;
+    margin: 0 auto;
+    position: fixed;
+    top: 210px;
+    left: 480px;
+}
+
+.sub-modal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.rules-modal h2 {
+    color: hsl(229, 25%, 31%);
+    letter-spacing: 0;
+    margin: 20px;
+
+    
+}
+
+.rules-modal button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    margin-right: 20px;
+    
+}
+
+.img-rules {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

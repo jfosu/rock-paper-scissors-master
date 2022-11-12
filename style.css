@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: Barlow Semi Condensed;
+    font-family: 'Barlow Semi Condensed', sans-serif;
     color: #fff;
     background: radial-gradient(circle at 50% 0%, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
     min-height: 100vh;
@@ -15,8 +15,8 @@ body {
 
 .container {
     margin: 0 auto;
-    width: 700px;
-    max-width: 100%;
+    max-width: 700px;
+    padding-top: 2rem;
 }
 
 header {
@@ -25,8 +25,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 150px;
     padding: 25px;
-    margin-top: 48px;
+    
     margin-bottom: 64px;
 }
 
@@ -44,38 +45,47 @@ h2 {
 }
 
 h4 {
+
     color: hsl(229, 64%, 46%);
-    margin: 0;
     text-transform: uppercase;
 }
 
 .score-container {
-    background-color: #fff;
-    padding: 20px 60px;
-    text-align: center;
-    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: 150px;
+    height: 100%;
+    line-height: 1;
 }
 
 .score-container p {
     color: hsl(229, 25%, 31%);
     font-size: 4rem;
-    margin: 0;
     font-weight: 700;
 }
 
 .btn-rules {
     border: 2px solid #fff;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: transparent;
     color: #fff;
-    font-size: 20px;
+    font-size: 10px;
     font-family: inherit;
-    padding: 10px 25px;
+    padding: 7px 25px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.btn-rules:hover {
+    background-color: #fff;
+    color: hsl(229, 25%, 31%);
 }
 
 main {
@@ -89,6 +99,27 @@ main {
     position: relative;
 }
 
+/*main {
+    position: relative;
+    display: grid;
+    grid-template-columns: (repeat(2, 1fr));
+    grid-template-areas: 
+        "paper scissors"
+        "rock rock";
+    place-items: center;
+    height: 30rem;
+}
+
+.btn-circle[data-choice="paper"] {
+    grid-area: paper;
+}
+.btn-circle[data-choice="scissors"] {
+    grid-area: scissors;
+}
+.btn-circle[data-choice="rock"] {
+    grid-area: rock;
+}
+*/
 
 main::before {
     background-image: url('./images/bg-triangle.svg');
@@ -100,10 +131,12 @@ main::before {
     left: 15%;
     height: 70%;
     width: 70%;
-    z-index: -1;
+    z-index: -2;
 }
 
+
 .btn-circle {
+    position: relative;
     border: none;
     border-radius: 50%;
     box-shadow: inset 0 -5px rgba(0, 0, 0, 0.15);
@@ -112,19 +145,38 @@ main::before {
     height: 150px;
     width: 150px;
 }
+/*.btn-circle:before {
+    position: absolute;
+    content: '';
+    background: rgb(253, 253, 253);
+    border-radius: 50%;
+    top: -10%;
+    left: -10%;
+    height: 180px;
+    width: 180px;
+    z-index: -1;
+    opacity: 0.1;
+}*/
 
 button {
     cursor: pointer;
 }
-
-.btn-circle:focus,
-button {
+button:focus {
     outline: none;
+}
+
+.btn-circle:focus {
+    outline: none;
+}
+.btn-circle:hover {
+    opacity: 1;
+    box-shadow: 0 0 0 1rem #223351;  
 }
 
 .btn-circle:active {
     transform: scale(0.9);
 }
+
 
 .btn-circle .wrapper {
     background-color: #fff;
@@ -203,16 +255,33 @@ button {
     text-transform: uppercase;
 }
 
-.rules-modal {
+.rules-backshadow {
     display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #0000004d;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    
+
+}
+
+.rules-modal {
+    display: block;
     border-radius: 10px;
     background-color: #f0f0f0;
-    width: 400px;
+    width: 350px;
     height: 350px;
     margin: 0 auto;
-    position: fixed;
-    top: 210px;
-    left: 480px;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    top: 160px;
+    left: 532px;
+
 }
 
 .sub-modal {
@@ -220,6 +289,7 @@ button {
     flex-direction: row;
     justify-content: space-between;
 }
+
 
 .rules-modal h2 {
     color: hsl(229, 25%, 31%);

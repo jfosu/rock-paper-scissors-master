@@ -6,6 +6,7 @@ const reset = document.getElementById('reset');
 const user_select = document.getElementById('user_select');
 const computer_select = document.getElementById('computer_select');
 const winner = document.getElementById('winner')
+const rulesBackground = document.querySelector('.rules-backshadow')
 
 const openBtn = document.getElementById('open');
 const closeBtn = document.getElementById('close');
@@ -33,10 +34,12 @@ reset.addEventListener('click', () => {
 
 openBtn.addEventListener('click', () => {
     modal.style.display = 'block';
+    rulesBackground.style.display = 'block'
 })
 
 closeBtn.addEventListener('click', () => {
     modal.style.display = 'none';
+    rulesBackground.style.display = 'none'
 })
 
 function checkWinner() {
